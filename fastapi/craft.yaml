@@ -5,6 +5,6 @@ services:
       repo: https://github.com/huma-engineering/craft-cloud-examples
       branch: main
       dockerfile: Dockerfile
-      context: .
+      context: fastapi
     ingress:
       port: 8000
