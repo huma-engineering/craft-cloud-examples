@@ -7,7 +7,7 @@ services:
     build:
       repo: https://github.com/huma-engineering/craft-cloud-examples
       branch: main
-      dockerfile: temporal/Dockerfile
+      dockerfile: Dockerfile
       context: temporal
     command:
       start: "python /app/app.py worker"
@@ -22,7 +22,7 @@ services:
     build:
       repo: https://github.com/huma-engineering/craft-cloud-examples
       branch: main
-      dockerfile: temporal/Dockerfile
+      dockerfile: Dockerfile
       context: temporal
     schedule: "*/2 * * * *"
     command:
