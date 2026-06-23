@@ -1,0 +1,30 @@
+services:
+  - name: temporal-mosi
+    type: temporal
+
+  - name: temporal-tester-worker
+    type: container
+    build:
+      dockerfile: Dockerfile
+      context: .
+    command:
+      start: "python /app/app.py worker"
+    envs:
+      - type: configmap
+        service: temporal-mosi
+        name: temporal-info
+        mapping: { address: TEMPORAL_ADDRESS }
+
+  - name: temporal-tester-starter
+    type: container
+    build:
+      dockerfile: Dockerfile
+      context: .
+    schedule: "*/2 * * * *"
+    command:
+      start: "python /app/app.py starter"
+    envs:
+      - type: configmap
+        service: temporal-mosi
+        name: temporal-info
+        mapping: { address: TEMPORAL_ADDRESS }
