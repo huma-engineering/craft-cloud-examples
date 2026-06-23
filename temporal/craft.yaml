@@ -5,6 +5,8 @@ services:
   - name: temporal-tester-worker
     type: container
     build:
+      repo: https://github.com/huma-engineering/craft-cloud-examples
+      branch: main
       dockerfile: Dockerfile
       context: .
     command:
@@ -18,6 +20,8 @@ services:
   - name: temporal-tester-starter
     type: container
     build:
+      repo: https://github.com/huma-engineering/craft-cloud-examples
+      branch: main
       dockerfile: Dockerfile
       context: .
     schedule: "*/2 * * * *"

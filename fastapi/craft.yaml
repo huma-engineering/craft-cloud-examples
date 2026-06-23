@@ -2,6 +2,8 @@ services:
   - name: fastapi
     type: container
     build:
+      repo: https://github.com/huma-engineering/craft-cloud-examples
+      branch: main
       dockerfile: Dockerfile
       context: .
     ingress:
