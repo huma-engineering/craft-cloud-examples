@@ -1,0 +1,8 @@
+services:
+  - name: fastapi
+    type: container
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ingress:
+      port: 8000
