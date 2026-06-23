@@ -15,7 +15,6 @@ services:
       - type: configmap
         service: temporal-mosi
         name: temporal-info
-        mapping: { address: TEMPORAL_ADDRESS }
 
   - name: temporal-tester-starter
     type: container
@@ -31,4 +30,3 @@ services:
       - type: configmap
         service: temporal-mosi
         name: temporal-info
-        mapping: { address: TEMPORAL_ADDRESS }

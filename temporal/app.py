@@ -48,7 +48,7 @@ async def run_starter(client: Client, task_queue: str) -> None:
 
 
 async def main() -> None:
-    address = os.environ["TEMPORAL_ADDRESS"]
+    address = os.environ.get("TEMPORAL_URL") or os.environ["TEMPORAL_ADDRESS"]
     namespace = os.environ.get("TEMPORAL_NAMESPACE", "default")
     task_queue = os.environ.get("TEMPORAL_TASK_QUEUE", "hello-task-queue")
     mode = sys.argv[1] if len(sys.argv) > 1 else "worker"
