@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
       context: temporal
     command:
-      start: "python /app/app.py worker"
+      start: "worker"
     envs:
       - type: configmap
         service: temporal-mosi
@@ -26,7 +26,7 @@ services:
       context: temporal
     schedule: "*/2 * * * *"
     command:
-      start: "python /app/app.py starter"
+      start: "starter"
     envs:
       - type: configmap
         service: temporal-mosi
